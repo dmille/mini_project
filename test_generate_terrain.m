@@ -1,0 +1,1 @@
+mesh = generate_terrain(64,64)
