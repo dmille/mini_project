@@ -23,3 +23,4 @@ hold on;
 plot(interp_p(:,1),interp_p(:,2),'*');
 plot(d(:,1),d(:,2),'*');
 plot(bspline(:,1),bspline(:,2));
+
