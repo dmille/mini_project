@@ -5,9 +5,9 @@ clear, close all;
 p = p';
 
 n_points = 10;
-t_sampling = 1000;
-tension = 0;
-speed = 500;
+t_sampling = 200;
+tension = -0.5;
+speed = 100;
 
 waypoints = rand(n_points,3);
 
@@ -20,12 +20,15 @@ figure;
 pv = subplot(1,2,2);
 plane_view(p,t');
 hold on;
+
+%plot_path_ribbon(pv, curve);
+
 plot3(curve(:,1), curve(:,2), curve(:,3)-0.005, ':r');
 
 mmv = subplot(1,2,1);
 minimap(p,t');
 hold on;
-plot3(curve(:,1), curve(:,2), curve(:,3), 'r-');
+plot3(curve(:,1), curve(:,2), curve(:,3), 'r.');
 for i = [1:n_points]
     
     plot3(mmv,waypoints(i,1),waypoints(i,2),waypoints(i,3),'g.', ...
