@@ -5,7 +5,7 @@ clear, close all;
 p = p';
 
 n_points = 10;
-t_sampling = 200;
+t_sampling = 1000;
 tension = -0.5;
 speed = 100;
 
