@@ -86,7 +86,7 @@ lighting gouraud;
 %lighting phong;
 
 %% Set Viewing Angle
-camva(40);
+camva(45);
 
 
 %campos([-6,-6,-1]);
