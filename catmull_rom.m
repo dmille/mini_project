@@ -5,8 +5,11 @@ function [curve_data] = catmull_rom(p0, p1, p2, p3, n, tension)
     curve_data = [];
     %n: number of interval in 1 spline
     % Parametrization: unit length
-    dist = norm(p3 - p0);
-    dt = 1/n*dist;
+
+%    dist = norm(p3 - p0);
+%   dt = 1/n*dist;
+    %dt = 1/n;
+    dt = linspace(0,1,round(n));
     %coeff involving the tension
     k = (1-tension)/2; 
     % matrix after derivation
@@ -15,8 +18,8 @@ function [curve_data] = catmull_rom(p0, p1, p2, p3, n, tension)
         2*k   k-3  3-2*k  -k;
         -k    2-k  k-2     k];
     
-    for i=0:n
-        t = i*dt;
+    for i=1:n
+        t = dt(i);
         %cubic parameter
         t_vec = [1 t t^2 t^3];
         
