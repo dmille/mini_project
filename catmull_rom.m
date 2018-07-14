@@ -1,14 +1,14 @@
 function [curve_data] = catmull_rom(p0, p1, p2, p3, n, tension)
     
-    % equation P(t) = t_vec*M*point_vec;
+%equation P(t) = t_vec*M*point_vec;
     %curve data
     curve_data = [];
     %n: number of interval in 1 spline
     % Parametrization: unit length
 
-%    dist = norm(p3 - p0);
-%   dt = 1/n*dist;
-    %dt = 1/n;
+    %   dist = norm(p3 - p0);
+    %    dt = 1/n*dist;
+%   dt = 1/n;
     dt = linspace(0,1,round(n));
     %coeff involving the tension
     k = (1-tension)/2; 
