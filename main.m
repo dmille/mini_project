@@ -21,9 +21,7 @@ pv = subplot(1,2,2);
 plane_view(p,t');
 hold on;
 
-%plot_path_ribbon(pv, curve);
-
-plot3(curve(:,1), curve(:,2), curve(:,3)-0.005, ':r');
+plot_path_ribbon(pv, curve, 0.005, -0.005);
 
 mmv = subplot(1,2,1);
 minimap(p,t');
