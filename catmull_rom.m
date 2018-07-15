@@ -41,7 +41,7 @@ function [curve_data] = catmull_rom(p0, p1, p2, p3, n, tension)
         end
 
         for j=1:3
-            curve_data(j,i+1) = temp(j);
+            curve_data(j,i) = temp(j);
         end
     end
 end
