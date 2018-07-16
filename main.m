@@ -35,16 +35,20 @@ ordered_pts = shortestpath_through_all_pts(waypoints);
 curve = get_curve_data_catmullrom(ordered_pts, t_sampling, tension)';
 
 figure;
-pv = subplot(1,2,2);
+%pv = subplot(1,2,2);
+pv = subplot(1,1,1);
 plane_view(p,t');
 hold on;
 
 plot_path_ribbon(pv, curve, ribbon_width, ribbon_offset);
 
-mmv = subplot(1,2,1);
+figure;
+%mmv = subplot(1,2,1);
+mmv = subplot(1,1,1);
 minimap(p,t');
 hold on;
 plot3(curve(:,1), curve(:,2), curve(:,3), 'r.');
+
 for i = [1:n_waypoints]
     
     plot3(mmv,waypoints(i,1),waypoints(i,2),waypoints(i,3),'g.', ...
@@ -57,5 +61,6 @@ for i = [1:n_waypoints]
 
 end
 
-fly_along_curve(curve, pv, mmv, speed);
+minimap_cam_height = 1;
+fly_along_curve(curve, pv, mmv, speed, minimap_cam_height);
 %rzview('on')

@@ -29,7 +29,7 @@ nT=nvnt(2,1);
 % Read vertices
 fprintf('...Reading %d Vertices\n',nV);
 Vertex = fscanf(fid,'%f',[3,nV]);
-Vertex(3,:) = Vertex(3,:) * zscaling;
+Vertex(3,:) = Vertex(3,:) * zscaling + 0.01;
 
 % Read faces
 fprintf('...Reading %d Faces\n',nT);

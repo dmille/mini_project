@@ -93,6 +93,7 @@ light('Position',[0 lims(3) lims(5)-lims(6)-2],'Style','local','color',[ 0.906 0
 % cam_pos=0.3.*(cam_pos-tar_pos)+tar_pos;
 % set(gca,'CameraPosition',cam_pos);
 % %%%%end added
+camva(20);
 
 vnormals=get(h1,'VertexNormals');
 rzview('on');

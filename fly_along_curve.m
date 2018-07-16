@@ -1,4 +1,4 @@
-function [] = fly_along_curve(curve, pv, mmv, speed)
+function [] = fly_along_curve(curve, pv, mmv, speed, minimap_cam_height)
 
     n_points = size(curve, 1);
     hlight = camlight(pv, 'headlight');
@@ -12,12 +12,15 @@ function [] = fly_along_curve(curve, pv, mmv, speed)
         set(plane_marker, 'Ydata', curve(i,2));
         set(plane_marker, 'Zdata', curve(i,3));
 
-        campos(pv, curve(i,:));
+        campos(mmv, [curve(i,1:2), minimap_cam_height]);
+        camtarget(mmv, [curve(i,1:2), 0]);
+
+        campos(pv, curve(i,:));               
         camtarget(pv, curve(i+5,:));
+
         camlight(hlight,'headlight');
         drawnow;
 
-        %set(pv, 'CameraTarget', test_curve(i+1,:));
         pause(delay);
     end
 
