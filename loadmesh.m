@@ -1,4 +1,4 @@
-function [Vertex, Face] = loadmesh(filename)
+function [Vertex, Face] = loadmesh(filename, zscaling)
 %LOADMESH read an OFF file and returns 
 %Vertex is a 3xnbr vertices  matrix
 %Face is 3xnbr triangles matrix or 4xnbr Quads
@@ -29,6 +29,7 @@ nT=nvnt(2,1);
 % Read vertices
 fprintf('...Reading %d Vertices\n',nV);
 Vertex = fscanf(fid,'%f',[3,nV]);
+Vertex(3,:) = Vertex(3,:) * zscaling;
 
 % Read faces
 fprintf('...Reading %d Faces\n',nT);

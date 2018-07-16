@@ -1,6 +1,6 @@
 clear, close all;
-
-[p,t] = loadmesh('sfterrain.off');
+zscaling=0.2;
+[p,t] = loadmesh('sfterrain.off', zscaling);
 
 p = p';
 
