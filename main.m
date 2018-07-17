@@ -4,7 +4,7 @@ clear, close all;
 %% Begin Global Vars
 
 % Controls the scaling of the terrain mesh in the z axis
-zscaling=0.2;
+zscaling=0.3;
 
 % number of sample points along the curve
 t_sampling = 1000;
@@ -32,7 +32,11 @@ n_waypoints = size(waypoints, 1);
 %waypoints = [waypoints ones(n_waypoints,1) * 0.5];
 ordered_pts = shortestpath_through_all_pts(waypoints);
 
-curve = get_curve_data_catmullrom(ordered_pts, t_sampling, tension)';
+seg_n = chord_length_parametrization(ordered_pts) * t_sampling;
+curve = get_curve_data_catmullrom(ordered_pts, seg_n, tension)';
+reparam_seg_n = reparam_curve(curve,ordered_pts) .* t_sampling;
+curve = get_curve_data_catmullrom(ordered_pts, reparam_seg_n, tension)';
+
 
 figure;
 %pv = subplot(1,2,2);
