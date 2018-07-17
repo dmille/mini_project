@@ -14,14 +14,18 @@ function [] = fly_along_curve(curve, pv, mmv, speed, minimap_cam_height)
 
         campos(mmv, [curve(i,1:2), minimap_cam_height]);
         camtarget(mmv, [curve(i,1:2), 0]);
-
+        
         campos(pv, curve(i,:));               
         camtarget(pv, curve(i+5,:));
-
+        
         camlight(hlight,'headlight');
         drawnow;
-
-        pause(delay);
+        
+        dist = norm(curve(i+1)-curve(i,:));        
+        const_vel = dist/speed;
+        
+        pause(const_vel);
+        %pause(delay);
     end
 
 

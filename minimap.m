@@ -96,5 +96,5 @@ light('Position',[0 lims(3) lims(5)-lims(6)-2],'Style','local','color',[ 0.906 0
 camva(20);
 
 vnormals=get(h1,'VertexNormals');
-rzview('on');
+rzview('off');
 

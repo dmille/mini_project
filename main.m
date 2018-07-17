@@ -17,12 +17,12 @@ tension = -0.5;
 speed = 100;
 
 % Vars to control ribbon width/normal offset
-ribbon_width = 0.005;
+ribbon_width = 0.0025;
 ribbon_offset = -0.005;
 
 % All waypoints Customize it later
 waypoints = rand(10,3);
-
+sphere_size = 0.003;
 %% End Global Variables
 
 [p,t] = loadmesh('sfterrain.off', zscaling);
@@ -54,7 +54,7 @@ for i = [1:n_waypoints]
     plot3(mmv,waypoints(i,1),waypoints(i,2),waypoints(i,3),'g.', ...
                          'MarkerSize', 12);
     [x,y,z] = sphere();
-    r = 0.004;
+    r = sphere_size;
     surf(pv,x*r+waypoints(i,1), y*r+waypoints(i,2), z*r+waypoints(i,3));
     %    plot3(pv,waypoints(i,1),waypoints(i,2),waypoints(i,3),'g.', ...
     %                    'MarkerSize', 40);

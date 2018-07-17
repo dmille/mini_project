@@ -32,7 +32,9 @@ end
 face_vertex_color = options.face_vertex_color;
 
 %set background to white
-set(gcf,'Color',[1,1,1]);
+
+set(gcf,'Color',[216/255,236/255,249/255]);
+%set(gcf,'Color',[1,1,1]);
 
 
 if isempty(face_vertex_color)
@@ -59,7 +61,7 @@ camproj('perspective');
 %
 %light('Position',[1 1 5],'Style','infinite','color','y');
 %light('Position',[0.43 0.5 0.75],'Style','infinite','color','w');
-set(h1,'edgelighting','phong');
+%set(h1,'edgelighting','phong');
 %camlight infinite; lighting phong;
 %
 set(gcf,'Renderer','OpenGL')
@@ -70,7 +72,7 @@ lipos=[lims(1)+lims(2) lims(3)+lims(4) lims(5)+lims(6)]/2;
 
 %set(h1,'edgelighting','phong');
 %hc=camlight('local');
-%set(hc,'color','b');
+set(hc,'color','b');
 
 %light('Position',[2 1 15],'Style','infinite','color','y');
 light('Position',[lims(2) lims(4) 0],'Style','local','color',[ 0.000 0.000 0.627 ]);
@@ -82,8 +84,8 @@ light('Position',[0 lims(3) lims(5)-lims(6)-2],'Style','local','color',[ 0.906 0
 %light('Position',[2 1 15],'Style','infinite','color','y');
 
 %% Lighting gouraud for smoother lighting
-%lighting gouraud;
-lighting phong;
+lighting gouraud;
+%lighting phong;
 
 %% Set Viewing Angle
 camva(45);
