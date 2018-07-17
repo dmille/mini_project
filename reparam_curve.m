@@ -16,6 +16,9 @@ function [tout] = reparam_curve(curve,waypoints)
     t_waypoints(diff1) = [];
     
     tout = tout(t_waypoints);
+    if (tout(end) ~= 1)
+        tout = [tout 1];
+    end
     tout = circshift(tout,-1) - tout; % calculates the difference between x(i) and x(i+1)
     tout = tout(1:end-1); % cuts off end
     
