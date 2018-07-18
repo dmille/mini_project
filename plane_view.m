@@ -72,7 +72,7 @@ lipos=[lims(1)+lims(2) lims(3)+lims(4) lims(5)+lims(6)]/2;
 
 %set(h1,'edgelighting','phong');
 %hc=camlight('local');
-set(hc,'color','b');
+%set(hc,'color','b');
 
 %light('Position',[2 1 15],'Style','infinite','color','y');
 light('Position',[lims(2) lims(4) 0],'Style','local','color',[ 0.000 0.000 0.627 ]);

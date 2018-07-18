@@ -34,7 +34,7 @@ ordered_pts = shortestpath_through_all_pts(waypoints);
 
 seg_n = chord_length_parametrization(ordered_pts) * t_sampling;
 curve = get_curve_data_catmullrom(ordered_pts, seg_n, tension)';
-reparam_seg_n = reparam_curve(curve,ordered_pts) .* t_sampling;
+reparam_seg_n = reparam_curve(curve,ordered_pts) .* t_sampling; 
 curve = get_curve_data_catmullrom(ordered_pts, reparam_seg_n, tension)';
 
 
