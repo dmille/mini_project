@@ -65,6 +65,9 @@ figure;
 %pv = subplot(1,2,2);
 pv = subplot(1,1,1);
 plane_view(p,t');
+pv.Clipping = "off";
+pv.CameraViewAngle = 30;
+
 hold on;
 
 plot_path_ribbon(pv, curve, ribbon_width, ribbon_offset);
